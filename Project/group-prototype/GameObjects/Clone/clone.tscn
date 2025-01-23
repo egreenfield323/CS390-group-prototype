@@ -1,18 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc2e0aoe68ah5"]
+[gd_scene load_steps=7 format=3 uid="uid://cc2e0aoe68ah5"]
 
+[ext_resource type="Script" path="res://GameObjects/Clone/clone.gd" id="1_ceh8s"]
 [ext_resource type="Texture2D" uid="uid://cm4vqdh7bxpox" path="res://icon.svg" id="1_ik2rj"]
+[ext_resource type="Shader" path="res://GameObjects/Clone/selected.gdshader" id="1_p5fre"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0bas"]
+shader = ExtResource("1_p5fre")
+shader_parameter/progress = 1.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x71wi"]
 radius = 63.9531
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6k0ne"]
+radius = 150.0
 
 [node name="Clone" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
+script = ExtResource("1_ceh8s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.9829, 0.984769, 0, 1)
+texture_filter = 2
+material = SubResource("ShaderMaterial_p0bas")
 texture = ExtResource("1_ik2rj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x71wi")
+
+[node name="CloneRadius" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloneRadius"]
+shape = SubResource("CircleShape2D_6k0ne")
+
+[connection signal="body_entered" from="CloneRadius" to="." method="_on_clone_radius_body_entered"]
+[connection signal="body_exited" from="CloneRadius" to="." method="_on_clone_radius_body_exited"]
