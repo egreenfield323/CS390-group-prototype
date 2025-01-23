@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ct8m3lnd83bcm"]
 
-[ext_resource type="Script" path="res://GameObjects/player.gd" id="1_ma1s3"]
+[ext_resource type="Script" path="res://GameObjects/Player/player.gd" id="1_ma1s3"]
 [ext_resource type="Texture2D" uid="uid://cm4vqdh7bxpox" path="res://icon.svg" id="1_ytn21"]
-[ext_resource type="PackedScene" uid="uid://cc2e0aoe68ah5" path="res://GameObjects/clone.tscn" id="2_wnyjk"]
+[ext_resource type="PackedScene" uid="uid://cc2e0aoe68ah5" path="res://GameObjects/Clone/clone.tscn" id="2_wnyjk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x71wi"]
 radius = 63.9531

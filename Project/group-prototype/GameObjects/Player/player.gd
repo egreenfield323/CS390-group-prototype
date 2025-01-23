@@ -4,8 +4,7 @@ extends CharacterBody2D
 
 @export var SPEED = 300.0
 @onready var clone_timer = $CloneTimer
-
-const JUMP_VELOCITY = -400.0
+@onready var CLONES_NODE = get_parent().get_node("Clones")
 
 func _physics_process(delta: float) -> void:
 	var direction: Vector2
@@ -22,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	velocity = direction.normalized() * SPEED
 	move_and_slide()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("clone"):
 		make_clone()
 
@@ -30,9 +29,9 @@ func _process(delta: float) -> void:
 func make_clone():
 	if clone_timer.time_left > 0:
 		return
-	else:
-		var clone = CLONE_RESOURCE.instantiate()
-		clone.position = self.global_position
-		get_parent().get_node("Clones").add_child(clone)
-		
-		clone_timer.start()
+	
+	var clone = CLONE_RESOURCE.instantiate()
+	clone.position = self.global_position
+	CLONES_NODE.add_child(clone)
+	
+	clone_timer.start()
