@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 @export var SPEED = 300.0
 @onready var clone_timer = $CloneTimer
-@onready var CLONES_NODE = get_parent().get_node("Clones")
+@export var CLONES_NODE: Node
 
 func _physics_process(delta: float) -> void:
 	var direction: Vector2

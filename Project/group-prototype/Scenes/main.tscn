@@ -6,5 +6,6 @@
 
 [node name="Clones" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("1_1iwdf")]
+[node name="Player" parent="." node_paths=PackedStringArray("CLONES_NODE") instance=ExtResource("1_1iwdf")]
 position = Vector2(232, 216)
+CLONES_NODE = NodePath("../Clones")

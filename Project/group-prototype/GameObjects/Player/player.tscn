@@ -7,10 +7,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_x71wi"]
 radius = 63.9531
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("CLONES_NODE")]
 motion_mode = 1
 script = ExtResource("1_ma1s3")
 CLONE_RESOURCE = ExtResource("2_wnyjk")
+CLONES_NODE = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ytn21")
