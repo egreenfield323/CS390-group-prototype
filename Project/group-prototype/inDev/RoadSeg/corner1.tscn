@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo0mqeiacl1ur"]
+
+[ext_resource type="Script" path="res://inDev/RoadSeg/corner1.gd" id="2_tqrdt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yb3s6"]
+size = Vector2(149, 83)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_12mkd"]
+radius = 20.0998
+
+[node name="Corner1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 29)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_yb3s6")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(32, -5)
+shape = SubResource("RectangleShape2D_yb3s6")
+metadata/_edit_lock_ = true
+
+[node name="turnPoint" type="Area2D" parent="StaticBody2D"]
+position = Vector2(-35, -39)
+script = ExtResource("2_tqrdt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/turnPoint"]
+shape = SubResource("CircleShape2D_12mkd")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = 50.0
+offset_top = -49.0
+offset_right = 201.0
+offset_bottom = 43.0
+rotation = 1.5708
+mouse_filter = 2
+color = Color(0.410168, 0.36547, 0.274345, 1)
+metadata/_edit_lock_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+offset_left = 92.0
+offset_top = -62.0
+offset_right = 243.0
+offset_bottom = 30.0
+rotation = 1.5708
+mouse_filter = 2
+color = Color(0.410168, 0.36547, 0.274345, 1)
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="StaticBody2D/turnPoint" to="StaticBody2D/turnPoint" method="_on_body_entered"]

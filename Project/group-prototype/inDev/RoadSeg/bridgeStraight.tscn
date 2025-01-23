@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://416a3htd83up"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_07pam"]
+font_color = Color(0.10436, 0.119452, 0.0582706, 1)
+
+[node name="BridgeStraight" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -74.0
+offset_top = -17.0
+offset_right = 77.0
+offset_bottom = 75.0
+mouse_filter = 2
+color = Color(0.410168, 0.36547, 0.274345, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+z_index = 2
+layout_mode = 0
+offset_left = 15.0
+offset_top = -21.0
+offset_right = 138.0
+offset_bottom = 106.0
+color = Color(0.272804, 0.21084, 0.136325, 1)
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+offset_left = -32.0
+offset_top = 3.0
+offset_right = 42.0
+offset_bottom = 26.0
+text = "an bridge"
+label_settings = SubResource("LabelSettings_07pam")
