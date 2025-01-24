@@ -43,7 +43,7 @@ _data = {
 "idle": SubResource("Animation_6agcf")
 }
 
-[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+[node name="Enemy" type="CharacterBody2D" groups=["Enemies", "enemy"]]
 script = ExtResource("1_mdr5b")
 
 [node name="ColorRect" type="ColorRect" parent="."]
