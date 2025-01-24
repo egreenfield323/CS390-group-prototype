@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c8hys8oquiv0s"]
 
-[ext_resource type="Script" path="res://inDev/RoadSeg/corner3.gd" id="1_6m0fs"]
+[ext_resource type="Script" path="res://GameObjects/Track Pieces/Corner 3 - BR/corner3.gd" id="1_6m0fs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epyat"]
 size = Vector2(128, 64)

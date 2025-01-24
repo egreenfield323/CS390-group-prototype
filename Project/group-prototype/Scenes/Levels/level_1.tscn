@@ -1,11 +1,14 @@
-[gd_scene load_steps=9 format=4 uid="uid://iv3b63bif04u"]
+[gd_scene load_steps=12 format=4 uid="uid://iv3b63bif04u"]
 
 [ext_resource type="Texture2D" uid="uid://dfg8n1uqc24i6" path="res://Assets/Map/spritesheet_tiles.png" id="1_weqk7"]
 [ext_resource type="PackedScene" uid="uid://ct8m3lnd83bcm" path="res://GameObjects/Player/player.tscn" id="2_m2v75"]
-[ext_resource type="PackedScene" uid="uid://416a3htd83up" path="res://inDev/RoadSeg/bridgeStraight.tscn" id="3_ey0au"]
-[ext_resource type="PackedScene" uid="uid://vx3mr66olv7a" path="res://inDev/RoadSeg/straight.tscn" id="4_6etlb"]
-[ext_resource type="PackedScene" uid="uid://c6nmtvp1repet" path="res://inDev/RoadSeg/corner2.tscn" id="5_8o50b"]
+[ext_resource type="PackedScene" uid="uid://416a3htd83up" path="res://GameObjects/Track Pieces/bridgeStraight.tscn" id="3_ey0au"]
+[ext_resource type="PackedScene" uid="uid://vx3mr66olv7a" path="res://GameObjects/Track Pieces/straight.tscn" id="4_6etlb"]
+[ext_resource type="PackedScene" uid="uid://c6nmtvp1repet" path="res://GameObjects/Track Pieces/Corner 2 - TR/corner2.tscn" id="5_8o50b"]
 [ext_resource type="PackedScene" uid="uid://c2b20y8ngnk2s" path="res://inDev/Enemy.tscn" id="6_s84bn"]
+[ext_resource type="PackedScene" uid="uid://b1oxtqqg8qe64" path="res://GameObjects/Track Pieces/Corner 4 - BL/corner4.tscn" id="7_ungbw"]
+[ext_resource type="PackedScene" uid="uid://c8hys8oquiv0s" path="res://GameObjects/Track Pieces/Corner 3 - BR/corner3.tscn" id="8_csfg5"]
+[ext_resource type="PackedScene" uid="uid://bo0mqeiacl1ur" path="res://GameObjects/Track Pieces/Coner 1 - TL/corner1.tscn" id="9_c7c03"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h7icd"]
 texture = ExtResource("1_weqk7")
@@ -556,28 +559,121 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="Enemy" parent="." instance=ExtResource("6_s84bn")]
-position = Vector2(232, 340)
-collision_layer = 5
+position = Vector2(-42, 230)
+collision_mask = 0
+direction = Vector2(1, 0)
 
 [node name="Track" type="Node2D" parent="."]
 
 [node name="Straight" parent="Track" instance=ExtResource("4_6etlb")]
-position = Vector2(-1, 196)
+position = Vector2(64, 224)
 
 [node name="Straight2" parent="Track" instance=ExtResource("4_6etlb")]
-position = Vector2(148, 196)
+position = Vector2(192, 224)
 
 [node name="Straight3" parent="Track" instance=ExtResource("4_6etlb")]
-position = Vector2(297, 196)
+position = Vector2(320, 224)
 
 [node name="Corner2" parent="Track" instance=ExtResource("5_8o50b")]
-position = Vector2(475, 225)
+position = Vector2(512, 192)
 
 [node name="BridgeStraight" parent="Track" instance=ExtResource("3_ey0au")]
-position = Vector2(799, 400)
+position = Vector2(798, 421)
+
+[node name="Corner4" parent="Track" instance=ExtResource("7_ungbw")]
+position = Vector2(192, 768)
+
+[node name="Corner3" parent="Track" instance=ExtResource("8_csfg5")]
+position = Vector2(512, 576)
+
+[node name="Corner1" parent="Track" instance=ExtResource("9_c7c03")]
+position = Vector2(192, 512)
+
+[node name="Straight5" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(349, 544)
+
+[node name="Straight6" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(352, 736)
+
+[node name="Corner5" parent="Track" instance=ExtResource("5_8o50b")]
+position = Vector2(512, 704)
+
+[node name="Corner6" parent="Track" instance=ExtResource("7_ungbw")]
+position = Vector2(448, 960)
+
+[node name="Straight7" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(640, 928)
+
+[node name="Straight8" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(768, 928)
+
+[node name="Straight9" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(896, 928)
+
+[node name="Straight10" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(1024, 928)
+
+[node name="Corner7" parent="Track" instance=ExtResource("8_csfg5")]
+position = Vector2(1280, 960)
+
+[node name="Straight11" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(1122, 928)
+
+[node name="Corner8" parent="Track" instance=ExtResource("5_8o50b")]
+position = Vector2(1280, 576)
+
+[node name="Corner9" parent="Track" instance=ExtResource("7_ungbw")]
+position = Vector2(768, 640)
+
+[node name="Corner10" parent="Track" instance=ExtResource("9_c7c03")]
+position = Vector2(768, 256)
+
+[node name="Straight12" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(960, 288)
+
+[node name="Straight13" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(1088, 288)
+
+[node name="Straight14" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(1216, 288)
+
+[node name="Straight15" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(1344, 288)
+
+[node name="Straight16" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(1473, 288)
+
+[node name="Straight17" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(959, 608)
+
+[node name="Straight18" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(1087, 608)
+
+[node name="Corner11" parent="Track" instance=ExtResource("5_8o50b")]
+position = Vector2(1664, 256)
+
+[node name="Corner12" parent="Track" instance=ExtResource("7_ungbw")]
+position = Vector2(1600, 704)
+
+[node name="Straight19" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(1792, 672)
+
+[node name="Straight20" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(1632, 449)
+rotation = 1.5708
+
+[node name="Straight21" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(1632, 567)
+rotation = 1.5708
+
+[node name="Straight22" parent="Track" instance=ExtResource("4_6etlb")]
+position = Vector2(1920, 672)
 
 [node name="Player" parent="." node_paths=PackedStringArray("CLONES_NODE") instance=ExtResource("2_m2v75")]
 position = Vector2(195, 388)
 CLONES_NODE = NodePath("../Clones")
 
 [node name="Clones" type="Node2D" parent="."]
+
+[node name="BridgeStraight" parent="." instance=ExtResource("3_ey0au")]
+position = Vector2(480, 359)

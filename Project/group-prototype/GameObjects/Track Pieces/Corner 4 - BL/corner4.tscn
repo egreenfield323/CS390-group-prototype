@@ -1,48 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6nmtvp1repet"]
+[gd_scene load_steps=4 format=3 uid="uid://b1oxtqqg8qe64"]
 
-[ext_resource type="Script" path="res://inDev/RoadSeg/corner2.gd" id="1_aude3"]
+[ext_resource type="Script" path="res://GameObjects/Track Pieces/Corner 4 - BL/corner4.gd" id="1_s0ncc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1k6dq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e164u"]
 size = Vector2(128, 64)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_upehb"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8h83x"]
 radius = 20.0
 
-[node name="Corner2" type="Node2D"]
+[node name="Corner4" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-rotation = 1.5708
+rotation = 4.71239
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(32.0002, 63.9999)
+position = Vector2(32.0001, 64)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_1k6dq")
+shape = SubResource("RectangleShape2D_e164u")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(64.0001, 31.9998)
-shape = SubResource("RectangleShape2D_1k6dq")
+position = Vector2(64, 31.9999)
+shape = SubResource("RectangleShape2D_e164u")
 metadata/_edit_lock_ = true
 
 [node name="turnPoint" type="Area2D" parent="StaticBody2D"]
-position = Vector2(-34, -41)
+position = Vector2(-38, -42)
 collision_mask = 4
-script = ExtResource("1_aude3")
+script = ExtResource("1_s0ncc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/turnPoint"]
-position = Vector2(34, 41)
-shape = SubResource("CircleShape2D_upehb")
+position = Vector2(38, 42)
+shape = SubResource("CircleShape2D_8h83x")
 metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 z_index = -1
-offset_left = 47.0
-offset_top = 46.0
-offset_right = 198.0
-offset_bottom = 138.0
-rotation = 3.14159
+offset_left = -47.0
+offset_top = -45.0
+offset_right = 104.0
+offset_bottom = 47.0
 mouse_filter = 2
 color = Color(0.410168, 0.36547, 0.274345, 1)
 metadata/_edit_lock_ = true

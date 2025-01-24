@@ -1,46 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo0mqeiacl1ur"]
+[gd_scene load_steps=4 format=3 uid="uid://c6nmtvp1repet"]
 
-[ext_resource type="Script" path="res://inDev/RoadSeg/corner1.gd" id="2_tqrdt"]
+[ext_resource type="Script" path="res://GameObjects/Track Pieces/Corner 2 - TR/corner2.gd" id="1_aude3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yb3s6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1k6dq"]
 size = Vector2(128, 64)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_12mkd"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_upehb"]
 radius = 20.0
 
-[node name="Corner1" type="Node2D"]
+[node name="Corner2" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+rotation = 1.5708
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(64, 32)
-shape = SubResource("RectangleShape2D_yb3s6")
+position = Vector2(32.0002, 63.9999)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1k6dq")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(32, 64)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_yb3s6")
+position = Vector2(64.0001, 31.9998)
+shape = SubResource("RectangleShape2D_1k6dq")
 metadata/_edit_lock_ = true
 
 [node name="turnPoint" type="Area2D" parent="StaticBody2D"]
-position = Vector2(-35, -39)
+position = Vector2(-34, -41)
 collision_mask = 4
-script = ExtResource("2_tqrdt")
+script = ExtResource("1_aude3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/turnPoint"]
-position = Vector2(35, 39)
-shape = SubResource("CircleShape2D_12mkd")
+position = Vector2(34, 41)
+shape = SubResource("CircleShape2D_upehb")
 metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 z_index = -1
-offset_left = 50.0
-offset_top = -49.0
-offset_right = 201.0
-offset_bottom = 43.0
-rotation = 1.5708
+offset_left = 47.0
+offset_top = 46.0
+offset_right = 198.0
+offset_bottom = 138.0
+rotation = 3.14159
 mouse_filter = 2
 color = Color(0.410168, 0.36547, 0.274345, 1)
 metadata/_edit_lock_ = true
@@ -56,4 +58,4 @@ mouse_filter = 2
 color = Color(0.410168, 0.36547, 0.274345, 1)
 metadata/_edit_lock_ = true
 
-[connection signal="body_entered" from="StaticBody2D/turnPoint" to="StaticBody2D/turnPoint" method="_on_body_entered"]
+[connection signal="body_shape_entered" from="StaticBody2D/turnPoint" to="StaticBody2D/turnPoint" method="_on_body_shape_entered"]
