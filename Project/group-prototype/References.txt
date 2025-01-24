@@ -4,3 +4,6 @@ Factory Assets:
 
 UI Assets:
 	https://kenney.nl/assets/ui-pack-sci-fi
+
+Character and Map Assets:
+	https://kenney.nl/assets/top-down-shooter
