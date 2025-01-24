@@ -44,13 +44,14 @@ _data = {
 }
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemies", "enemy"]]
+collision_layer = 4
 script = ExtResource("1_mdr5b")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -34.2974
-offset_top = -36.2716
-offset_right = 31.7026
-offset_bottom = 30.7284
+offset_left = -34.0
+offset_top = -33.0
+offset_right = 32.0
+offset_bottom = 34.0
 color = Color(0.99527, 0, 0.0737783, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
