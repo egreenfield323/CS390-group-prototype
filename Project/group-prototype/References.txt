@@ -1,0 +1,6 @@
+Factory Assets:
+	https://kenney.nl/assets/tiny-dungeon
+	https://kenney.nl/assets/tiny-battle
+
+UI Assets:
+	https://kenney.nl/assets/ui-pack-sci-fi
