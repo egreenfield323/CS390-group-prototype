@@ -1,20 +1,21 @@
 [gd_scene load_steps=5 format=3 uid="uid://ct8m3lnd83bcm"]
 
 [ext_resource type="Script" path="res://GameObjects/Player/player.gd" id="1_ma1s3"]
-[ext_resource type="Texture2D" uid="uid://cm4vqdh7bxpox" path="res://icon.svg" id="1_ytn21"]
 [ext_resource type="PackedScene" uid="uid://cc2e0aoe68ah5" path="res://GameObjects/Clone/clone.tscn" id="2_wnyjk"]
+[ext_resource type="Texture2D" uid="uid://rikv27f4dvrs" path="res://Assets/Characters/spritesheet_characters.png" id="3_aek2t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x71wi"]
-radius = 63.9531
+radius = 25.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("CLONES_NODE")]
+[node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_ma1s3")
 CLONE_RESOURCE = ExtResource("2_wnyjk")
-CLONES_NODE = NodePath("")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ytn21")
+texture = ExtResource("3_aek2t")
+region_enabled = true
+region_rect = Rect2(426, 176, 32, 43)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x71wi")
