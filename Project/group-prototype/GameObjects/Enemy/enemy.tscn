@@ -64,7 +64,7 @@ offset_right = 32.0
 offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.99527, 0, 0.0737783, 1)
+color = Color(0, 0.765622, 0.21548, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gk3cn")
