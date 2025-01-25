@@ -564,6 +564,8 @@ collision_mask = 0
 direction = Vector2(1, 0)
 
 [node name="Track" type="Node2D" parent="."]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Straight" parent="Track" instance=ExtResource("4_6etlb")]
 position = Vector2(64, 224)
@@ -669,11 +671,14 @@ rotation = 1.5708
 [node name="Straight22" parent="Track" instance=ExtResource("4_6etlb")]
 position = Vector2(1920, 672)
 
+[node name="BridgeStraight2" parent="Track" instance=ExtResource("3_ey0au")]
+position = Vector2(480, 359)
+
+[node name="BridgeStraight3" parent="Track" instance=ExtResource("3_ey0au")]
+position = Vector2(1244, 742)
+
 [node name="Player" parent="." node_paths=PackedStringArray("CLONES_NODE") instance=ExtResource("2_m2v75")]
 position = Vector2(195, 388)
 CLONES_NODE = NodePath("../Clones")
 
 [node name="Clones" type="Node2D" parent="."]
-
-[node name="BridgeStraight" parent="." instance=ExtResource("3_ey0au")]
-position = Vector2(480, 359)
