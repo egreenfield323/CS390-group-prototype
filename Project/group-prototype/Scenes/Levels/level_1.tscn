@@ -556,7 +556,6 @@ position = Vector2(-129, 228)
 metadata/_edit_group_ = true
 
 [node name="SpawnTimer" type="Timer" parent="EnemySpawnPoint"]
-autostart = true
 
 [node name="ColorRect" type="ColorRect" parent="EnemySpawnPoint"]
 anchors_preset = 8
@@ -703,4 +702,20 @@ CLONES_NODE = NodePath("../Clones")
 
 [node name="Clones" type="Node2D" parent="."]
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="PlayButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1708.0
+offset_top = 990.0
+offset_right = 1834.0
+offset_bottom = 1030.0
+text = "Start Level"
+
 [connection signal="timeout" from="EnemySpawnPoint/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="pressed" from="Control/PlayButton" to="." method="_on_play_button_pressed"]
