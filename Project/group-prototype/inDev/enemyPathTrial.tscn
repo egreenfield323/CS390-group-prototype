@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://btxkcolngywjh"]
 
-[ext_resource type="PackedScene" uid="uid://c2b20y8ngnk2s" path="res://inDev/Enemy.tscn" id="1_l8jet"]
+[ext_resource type="PackedScene" uid="uid://c2b20y8ngnk2s" path="res://GameObjects/Enemy/Enemy.tscn" id="1_l8jet"]
 [ext_resource type="PackedScene" uid="uid://bo0mqeiacl1ur" path="res://GameObjects/Track Pieces/Coner 1 - TL/corner1.tscn" id="2_a1ipn"]
 [ext_resource type="PackedScene" uid="uid://c6nmtvp1repet" path="res://GameObjects/Track Pieces/Corner 2 - TR/corner2.tscn" id="3_khwjg"]
 [ext_resource type="PackedScene" uid="uid://c8hys8oquiv0s" path="res://GameObjects/Track Pieces/Corner 3 - BR/corner3.tscn" id="4_7auwl"]
