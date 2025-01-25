@@ -1,22 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3sxbc3xwa5ld"]
+[gd_scene load_steps=4 format=3 uid="uid://dhyx2wnmgk0ck"]
 
-[ext_resource type="Script" path="res://GameObjects/Factory/Wood/wood_harvester.gd" id="1_3rhou"]
-[ext_resource type="Texture2D" uid="uid://dmjpnwbaehjt2" path="res://Assets/Factory/factory_tilemap2.png" id="1_3yfr0"]
+[ext_resource type="Script" path="res://GameObjects/Factory/Stone/stone_harvester.gd" id="1_ko0gs"]
+[ext_resource type="Texture2D" uid="uid://dmjpnwbaehjt2" path="res://Assets/Factory/factory_tilemap2.png" id="2_r8b4b"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysair"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pygs"]
 
-[node name="Wood_Harvester" type="StaticBody2D"]
+[node name="Stone_Harvester" type="StaticBody2D"]
 scale = Vector2(4, 4)
 input_pickable = true
-script = ExtResource("1_3rhou")
+script = ExtResource("1_ko0gs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ysair")
+shape = SubResource("RectangleShape2D_3pygs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_3yfr0")
+texture = ExtResource("2_r8b4b")
 region_enabled = true
-region_rect = Rect2(240, 0, 16, 16)
+region_rect = Rect2(240, 64, 16, 16)
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -58,7 +58,7 @@ horizontal_alignment = 1
 [node name="Generation_Number" type="Label" parent="UI/Upgrade_Menu/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
-text = "1 every 1.0s"
+text = "1 every 2.0s"
 horizontal_alignment = 1
 
 [node name="Panel" type="Panel" parent="UI"]
@@ -86,7 +86,7 @@ text = "Upgrade"
 [node name="Upgrade_Cost" type="Label" parent="UI/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "$200"
+text = "$300"
 horizontal_alignment = 1
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

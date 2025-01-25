@@ -1,50 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://c40cinski3bp1"]
+[gd_scene load_steps=16 format=3 uid="uid://c40cinski3bp1"]
 
 [ext_resource type="Texture2D" uid="uid://dh8avh7a14fka" path="res://Assets/Factory/factory_tilemap1.png" id="1_5jwo1"]
 [ext_resource type="Script" path="res://GameObjects/Factory/Cart/factory_cart.gd" id="1_bwwoh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbxpt"]
 size = Vector2(20, 24)
-
-[sub_resource type="Animation" id="Animation_6uc4b"]
-resource_name = "WOOD_01_FORWARD"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Area2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(312, 150), Vector2(312, 132.5), Vector2(376, 132.5), Vector2(376, 117)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Area2D/Sprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [55, 54, 55]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:distance_along_path")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 100]
-}
 
 [sub_resource type="Animation" id="Animation_mqr3d"]
 length = 0.001
@@ -85,6 +45,164 @@ tracks/2/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_s17u4"]
+resource_name = "STONE_01_FORWARD"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(360, 53), Vector2(377, 53)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [54]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:distance_along_path")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [100, 0]
+}
+
+[sub_resource type="Animation" id="Animation_q5bh2"]
+resource_name = "STONE_01_FORWARD"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(377, 53), Vector2(360, 53)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [54]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:distance_along_path")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 100]
+}
+
+[sub_resource type="Animation" id="Animation_sfrmw"]
+resource_name = "STONE_01_FORWARD"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2, 1.5, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(344, 67.75), Vector2(344, 70), Vector2(392, 70), Vector2(392, 85.5), Vector2(408, 85.5), Vector2(408, 101), Vector2(424, 101)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.9, 1.2, 1.5, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [55, 54, 55, 54, 55, 54, 55]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:distance_along_path")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [100, 0]
+}
+
+[sub_resource type="Animation" id="Animation_clhvb"]
+resource_name = "STONE_01_FORWARD"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(424, 101), Vector2(408, 101), Vector2(408, 85.5), Vector2(392, 85.5), Vector2(392, 70), Vector2(344, 70), Vector2(344, 67.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.3, 0.6, 0.9, 1.2, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [55, 54, 55, 54, 55, 54, 55]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:distance_along_path")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 100]
+}
+
 [sub_resource type="Animation" id="Animation_7gied"]
 resource_name = "WOOD_01_BACKWARDS"
 length = 3.0
@@ -121,12 +239,13 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [100, 0]
 }
 
-[sub_resource type="Animation" id="Animation_6wsk8"]
+[sub_resource type="Animation" id="Animation_6uc4b"]
 resource_name = "WOOD_01_FORWARD"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -134,10 +253,10 @@ tracks/0/path = NodePath("Area2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.5, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(376, 150), Vector2(376, 117)]
+"values": [Vector2(312, 150), Vector2(312, 132.5), Vector2(376, 132.5), Vector2(376, 117)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -146,10 +265,10 @@ tracks/1/path = NodePath("Area2D/Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [55]
+"values": [55, 54, 55]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -158,9 +277,9 @@ tracks/2/path = NodePath(".:distance_along_path")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [0, 100]
 }
 
@@ -199,13 +318,12 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [100, 0]
 }
 
-[sub_resource type="Animation" id="Animation_jeymn"]
+[sub_resource type="Animation" id="Animation_6wsk8"]
 resource_name = "WOOD_01_FORWARD"
-length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -213,10 +331,10 @@ tracks/0/path = NodePath("Area2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(440, 150), Vector2(440, 132.5), Vector2(376, 132.5), Vector2(376, 117)]
+"values": [Vector2(376, 150), Vector2(376, 117)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -225,10 +343,10 @@ tracks/1/path = NodePath("Area2D/Sprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [55, 54, 55]
+"values": [55]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -237,9 +355,9 @@ tracks/2/path = NodePath(".:distance_along_path")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [0, 100]
 }
 
@@ -279,13 +397,57 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
+"update": 0,
 "values": [100, 0]
+}
+
+[sub_resource type="Animation" id="Animation_jeymn"]
+resource_name = "WOOD_01_FORWARD"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(440, 150), Vector2(440, 132.5), Vector2(376, 132.5), Vector2(376, 117)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [55, 54, 55]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:distance_along_path")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 100]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6emu3"]
 _data = {
 "RESET": SubResource("Animation_mqr3d"),
+"STONE_01_BACKWARDS": SubResource("Animation_s17u4"),
+"STONE_01_FORWARD": SubResource("Animation_q5bh2"),
+"STONE_02_BACKWARDS": SubResource("Animation_sfrmw"),
+"STONE_02_FORWARD": SubResource("Animation_clhvb"),
 "WOOD_01_BACKWARDS": SubResource("Animation_7gied"),
 "WOOD_01_FORWARD": SubResource("Animation_6uc4b"),
 "WOOD_02_BACKWARDS": SubResource("Animation_yuxr5"),
@@ -300,7 +462,6 @@ script = ExtResource("1_bwwoh")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(312, 150)
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_qbxpt")
@@ -325,11 +486,84 @@ theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 1
 
+[node name="UI" type="Node2D" parent="Area2D"]
+visible = false
+position = Vector2(0, -2.75)
+metadata/_edit_group_ = true
+
+[node name="Upgrade_Menu" type="Panel" parent="Area2D/UI"]
+offset_left = -20.0
+offset_top = -34.75
+offset_right = 20.0
+offset_bottom = -11.75
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Area2D/UI/Upgrade_Menu"]
+layout_mode = 0
+offset_right = 889.0
+offset_bottom = 506.0
+scale = Vector2(0.045, 0.045)
+mouse_filter = 2
+
+[node name="Level_Label" type="Label" parent="Area2D/UI/Upgrade_Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+text = "Level"
+horizontal_alignment = 1
+
+[node name="Level_Number" type="Label" parent="Area2D/UI/Upgrade_Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "1"
+horizontal_alignment = 1
+
+[node name="Inventory_Label" type="Label" parent="Area2D/UI/Upgrade_Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+text = "Inventory Space"
+horizontal_alignment = 1
+
+[node name="Inventory_Number" type="Label" parent="Area2D/UI/Upgrade_Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "20"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Area2D/UI"]
+offset_left = -37.0
+offset_top = -31.0
+offset_right = -21.0
+offset_bottom = -17.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Area2D/UI/Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 312.0
+offset_bottom = 268.0
+scale = Vector2(0.045, 0.045)
+mouse_filter = 2
+alignment = 1
+
+[node name="Level_Upgrade" type="Button" parent="Area2D/UI/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Upgrade"
+
+[node name="Upgrade_Cost" type="Label" parent="Area2D/UI/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "$100"
+horizontal_alignment = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_6emu3")
 }
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="pressed" from="Area2D/UI/Panel/VBoxContainer/Level_Upgrade" to="." method="_on_level_upgrade_pressed"]

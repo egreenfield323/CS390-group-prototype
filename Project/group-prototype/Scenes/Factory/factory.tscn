@@ -1,11 +1,55 @@
-[gd_scene load_steps=7 format=4 uid="uid://1ix164dh87b5"]
+[gd_scene load_steps=15 format=4 uid="uid://1ix164dh87b5"]
 
 [ext_resource type="Script" path="res://Scenes/Factory/factory.gd" id="1_7s8mq"]
 [ext_resource type="TileSet" uid="uid://d0wmr04r1en8v" path="res://Assets/Factory/factory_tileset.tres" id="2_l4wup"]
 [ext_resource type="PackedScene" uid="uid://c40cinski3bp1" path="res://GameObjects/Factory/Cart/factory_cart.tscn" id="3_4fvga"]
 [ext_resource type="PackedScene" uid="uid://c3sxbc3xwa5ld" path="res://GameObjects/Factory/Wood/wood_harvester.tscn" id="4_mb62w"]
 [ext_resource type="PackedScene" uid="uid://i8ejw5gnpund" path="res://GameObjects/Factory/Collector/Collector.tscn" id="5_2wald"]
+[ext_resource type="Texture2D" uid="uid://c48eoh8j4sqej" path="res://Assets/Factory/factory_wood_layer_tilemap.png" id="6_gvebp"]
 [ext_resource type="Texture2D" uid="uid://q364enuinbtp" path="res://Assets/Factory/Wood/wood_sprite.png" id="6_n0e0m"]
+[ext_resource type="PackedScene" uid="uid://dhyx2wnmgk0ck" path="res://GameObjects/Factory/Stone/stone_harvester.tscn" id="7_xnl5s"]
+[ext_resource type="Texture2D" uid="uid://cnav1dtflxflu" path="res://Assets/Factory/Currency/coin_sprite.png" id="8_46bd5"]
+[ext_resource type="Texture2D" uid="uid://bsfd3l11f870w" path="res://Assets/Factory/Stone/stone_sprite.png" id="8_t8su5"]
+
+[sub_resource type="Animation" id="Animation_256wp"]
+resource_name = "spin_coin"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_yoe7g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lju0w"]
+_data = {
+"RESET": SubResource("Animation_yoe7g"),
+"spin_coin": SubResource("Animation_256wp")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5vvp5"]
 
 [node name="Factory" type="Node2D"]
 script = ExtResource("1_7s8mq")
@@ -26,28 +70,56 @@ scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAALAAsAAgAEAAUAAAAEAAsAAgAEAAYAAAAOAAIAAQAFAAcAAAAPAAIAAQAFAAcAAAAQAAIAAQAFAAcAAAARAAIAAQACAAYAAAANAAIAAQAAAAYAAAAMAAIAAQABAAYAAAA=")
 tile_set = ExtResource("2_l4wup")
 
+[node name="Stone_Layer" type="Node2D" parent="."]
+
+[node name="Stone_Layer" type="TileMapLayer" parent="Stone_Layer"]
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAAXAAMAAQAKAAUAAAAWAAMAAQAKAAUAAAAaAAYAAQALAAcAAAAZAAYAAQAJAAcAAAAZAAUAAQALAAUAAAAYAAUAAQAJAAcAAAAYAAQAAQALAAUAAAAXAAQAAQAKAAUAAAAWAAQAAQAKAAUAAAAVAAQAAQAJAAcAAAA=")
+tile_set = ExtResource("2_l4wup")
+
+[node name="Rock2" type="Node2D" parent="Stone_Layer"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Stone_Layer/Rock2"]
+position = Vector2(1689, 240)
+scale = Vector2(14, 14)
+texture = ExtResource("6_gvebp")
+region_enabled = true
+region_rect = Rect2(128, 18, 16, 12)
+
+[node name="Sprite2D" type="Sprite2D" parent="Stone_Layer/Rock2"]
+position = Vector2(1724, 283)
+scale = Vector2(7, 7)
+texture = ExtResource("6_gvebp")
+region_enabled = true
+region_rect = Rect2(128, 18, 16, 12)
+
+[node name="Carts" type="Node2D" parent="Stone_Layer"]
+
+[node name="FactoryCart" parent="Stone_Layer/Carts" instance=ExtResource("3_4fvga")]
+cart = "STONE_01"
+
+[node name="FactoryCart2" parent="Stone_Layer/Carts" instance=ExtResource("3_4fvga")]
+cart = "STONE_02"
+
+[node name="Stone_Harvesters" type="Node2D" parent="Stone_Layer"]
+
+[node name="Harvester_STONE_01" parent="Stone_Layer/Stone_Harvesters" instance=ExtResource("7_xnl5s")]
+position = Vector2(1568, 216)
+
+[node name="Harvester_STONE_02" parent="Stone_Layer/Stone_Harvesters" instance=ExtResource("7_xnl5s")]
+position = Vector2(1696, 352)
+
+[node name="Stone_Collectors" type="Node2D" parent="Stone_Layer"]
+
+[node name="Collector_STONE" parent="Stone_Layer/Stone_Collectors" instance=ExtResource("5_2wald")]
+position = Vector2(1373, 224)
+
 [node name="Wood_Layer" type="Node2D" parent="."]
 
 [node name="Wood_Layer" type="TileMapLayer" parent="Wood_Layer"]
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAASAAsAAwABAAAAAAASAAwAAwABAAEAAAATAAsAAwACAAAAAAATAAwAAwACAAEAAAAaAAsAAwABAAAAAAAaAAwAAwABAAEAAAAbAAsAAwACAAAAAAAbAAwAAwACAAEAAAAWAAsAAwABAAAAAAAWAAwAAwABAAEAAAAXAAsAAwACAAAAAAAXAAwAAwACAAEAAAATAAkAAQALAAYAAAAbAAkAAQALAAYAAAAXAAkAAQALAAYAAAATAAgAAQAJAAUAAAAbAAgAAQALAAUAAAAUAAgAAQAKAAUAAAAVAAgAAQAKAAUAAAAWAAgAAQAKAAUAAAAaAAgAAQAKAAUAAAAZAAgAAQAKAAUAAAAYAAgAAQAKAAUAAAAXAAgAAQAJAAYAAAAXAAcAAQAJAAYAAAA=")
 tile_set = ExtResource("2_l4wup")
-
-[node name="Wood_Harvesters" type="Node2D" parent="Wood_Layer"]
-
-[node name="Wood_Harvester" parent="Wood_Layer/Wood_Harvesters" instance=ExtResource("4_mb62w")]
-position = Vector2(1244, 672)
-
-[node name="Wood_Harvester2" parent="Wood_Layer/Wood_Harvesters" instance=ExtResource("4_mb62w")]
-position = Vector2(1504, 664)
-
-[node name="Wood_Harvester3" parent="Wood_Layer/Wood_Harvesters" instance=ExtResource("4_mb62w")]
-position = Vector2(1760, 664)
-
-[node name="Wood_Collectors" type="Node2D" parent="Wood_Layer"]
-
-[node name="Collector" parent="Wood_Layer/Wood_Collectors" instance=ExtResource("5_2wald")]
-position = Vector2(1504, 416)
 
 [node name="Carts" type="Node2D" parent="Wood_Layer"]
 
@@ -60,6 +132,22 @@ cart = "WOOD_02"
 [node name="FactoryCart3" parent="Wood_Layer/Carts" instance=ExtResource("3_4fvga")]
 cart = "WOOD_03"
 
+[node name="Wood_Harvesters" type="Node2D" parent="Wood_Layer"]
+
+[node name="Harvester_WOOD_01" parent="Wood_Layer/Wood_Harvesters" instance=ExtResource("4_mb62w")]
+position = Vector2(1244, 672)
+
+[node name="Harvester_WOOD_02" parent="Wood_Layer/Wood_Harvesters" instance=ExtResource("4_mb62w")]
+position = Vector2(1504, 664)
+
+[node name="Harvester_WOOD_03" parent="Wood_Layer/Wood_Harvesters" instance=ExtResource("4_mb62w")]
+position = Vector2(1760, 664)
+
+[node name="Wood_Collectors" type="Node2D" parent="Wood_Layer"]
+
+[node name="Collector_WOOD" parent="Wood_Layer/Wood_Collectors" instance=ExtResource("5_2wald")]
+position = Vector2(1504, 416)
+
 [node name="UI" type="Node2D" parent="."]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI"]
@@ -67,22 +155,60 @@ offset_left = 35.0
 offset_top = 24.0
 offset_right = 140.0
 offset_bottom = 401.0
-metadata/_edit_group_ = true
 
 [node name="Inventory" type="Label" parent="UI/VBoxContainer"]
+visible = false
 layout_mode = 2
+theme_override_font_sizes/font_size = 100
 text = "Inventory"
 horizontal_alignment = 1
 
+[node name="Currency_Panel" type="Panel" parent="UI/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(155, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/VBoxContainer/Currency_Panel"]
+position = Vector2(77.5, 75)
+scale = Vector2(9.6875, 9.375)
+texture = ExtResource("8_46bd5")
+hframes = 10
+
+[node name="Label" type="Label" parent="UI/VBoxContainer/Currency_Panel"]
+layout_mode = 0
+offset_right = 155.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/VBoxContainer/Currency_Panel"]
+libraries = {
+"": SubResource("AnimationLibrary_lju0w")
+}
+
+[node name="Spacer_Panel" type="Panel" parent="UI/VBoxContainer"]
+custom_minimum_size = Vector2(155, 45.905)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5vvp5")
+
 [node name="Wood_Panel" type="Panel" parent="UI/VBoxContainer"]
 clip_contents = true
-custom_minimum_size = Vector2(50, 100)
+custom_minimum_size = Vector2(155, 150)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="TextureRect" type="TextureRect" parent="UI/VBoxContainer/Wood_Panel"]
 layout_mode = 0
-offset_right = 100.0
-offset_bottom = 100.0
+offset_left = 1.32183
+offset_top = -7.66666
+offset_right = 159.322
+offset_bottom = 150.333
 texture = ExtResource("6_n0e0m")
 expand_mode = 5
 
@@ -93,3 +219,30 @@ offset_bottom = 34.0
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Stone_Panel" type="Panel" parent="UI/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(155, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="UI/VBoxContainer/Stone_Panel"]
+layout_mode = 0
+offset_left = 3.62069
+offset_top = 8.44829
+offset_right = 152.621
+offset_bottom = 144.448
+texture = ExtResource("8_t8su5")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="UI/VBoxContainer/Stone_Panel"]
+layout_mode = 0
+offset_right = 36.0
+offset_bottom = 34.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/VBoxContainer"]
+layout_mode = 2
