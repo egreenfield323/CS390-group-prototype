@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2b20y8ngnk2s"]
+[gd_scene load_steps=7 format=3 uid="uid://c2b20y8ngnk2s"]
 
 [ext_resource type="Script" path="res://inDev/enemy.gd" id="1_mdr5b"]
 
@@ -43,6 +43,9 @@ _data = {
 "idle": SubResource("Animation_6agcf")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmewk"]
+size = Vector2(70, 71)
+
 [node name="Enemy" type="CharacterBody2D" groups=["Enemies", "enemy"]]
 collision_layer = 4
 script = ExtResource("1_mdr5b")
@@ -63,3 +66,11 @@ libraries = {
 "": SubResource("AnimationLibrary_554m1")
 }
 autoplay = "idle"
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_vmewk")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

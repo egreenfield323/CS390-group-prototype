@@ -24,3 +24,9 @@ func moveLeft():
 	
 func getDirection():
 	return direction
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.name.match("Bullet"):
+		body.queue_free()
+		self.queue_free()
