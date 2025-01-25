@@ -42,3 +42,5 @@ func add_currency(amount = null):
 		currency += amount
 	else:
 		currency += 1
+	
+	update_ui()
