@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhyx2wnmgk0ck"]
+
+[ext_resource type="Script" path="res://GameObjects/Factory/Stone/stone_harvester.gd" id="1_ko0gs"]
+[ext_resource type="Texture2D" uid="uid://dmjpnwbaehjt2" path="res://Assets/Factory/factory_tilemap2.png" id="2_r8b4b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pygs"]
+
+[node name="Stone_Harvester" type="StaticBody2D"]
+scale = Vector2(4, 4)
+input_pickable = true
+script = ExtResource("1_ko0gs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3pygs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_r8b4b")
+region_enabled = true
+region_rect = Rect2(240, 64, 16, 16)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="UI" type="Node2D" parent="."]
+visible = false
+
+[node name="Upgrade_Menu" type="Panel" parent="UI"]
+offset_left = -20.0
+offset_top = -34.75
+offset_right = 20.0
+offset_bottom = -11.75
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Upgrade_Menu"]
+layout_mode = 0
+offset_right = 889.0
+offset_bottom = 506.0
+scale = Vector2(0.045, 0.045)
+mouse_filter = 2
+
+[node name="Level_Label" type="Label" parent="UI/Upgrade_Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+text = "Level"
+horizontal_alignment = 1
+
+[node name="Level_Number" type="Label" parent="UI/Upgrade_Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "1"
+horizontal_alignment = 1
+
+[node name="Generation_Label" type="Label" parent="UI/Upgrade_Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 110
+text = "Generation Rate"
+horizontal_alignment = 1
+
+[node name="Generation_Number" type="Label" parent="UI/Upgrade_Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "1 every 2.0s"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="UI"]
+offset_left = -37.0
+offset_top = -31.0
+offset_right = -21.0
+offset_bottom = -17.0
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 312.0
+offset_bottom = 268.0
+scale = Vector2(0.045, 0.045)
+mouse_filter = 2
+alignment = 1
+
+[node name="Level_Upgrade" type="Button" parent="UI/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Upgrade"
+
+[node name="Upgrade_Cost" type="Label" parent="UI/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "$300"
+horizontal_alignment = 1
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/Panel/VBoxContainer/Level_Upgrade" to="." method="_on_level_upgrade_pressed"]
