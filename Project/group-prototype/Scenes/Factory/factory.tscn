@@ -11,6 +11,21 @@
 [ext_resource type="Texture2D" uid="uid://cnav1dtflxflu" path="res://Assets/Factory/Currency/coin_sprite.png" id="8_46bd5"]
 [ext_resource type="Texture2D" uid="uid://bsfd3l11f870w" path="res://Assets/Factory/Stone/stone_sprite.png" id="8_t8su5"]
 
+[sub_resource type="Animation" id="Animation_yoe7g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_256wp"]
 resource_name = "spin_coin"
 length = 2.0
@@ -26,21 +41,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-}
-
-[sub_resource type="Animation" id="Animation_yoe7g"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lju0w"]
@@ -246,3 +246,9 @@ vertical_alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="UI/VBoxContainer"]
 layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="UI"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="UI/PlayButton" to="." method="_on_play_button_pressed"]
