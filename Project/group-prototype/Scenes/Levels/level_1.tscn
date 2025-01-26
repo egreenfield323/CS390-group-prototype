@@ -1,16 +1,15 @@
-[gd_scene load_steps=14 format=4 uid="uid://iv3b63bif04u"]
+[gd_scene load_steps=13 format=4 uid="uid://iv3b63bif04u"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_1.gd" id="1_htovo"]
 [ext_resource type="Texture2D" uid="uid://dfg8n1uqc24i6" path="res://Assets/Map/spritesheet_tiles.png" id="1_weqk7"]
-[ext_resource type="PackedScene" uid="uid://d4lsgx05sb6qv" path="res://inDev/TowerHud/level_hud.tscn" id="3_0fkuq"]
+[ext_resource type="PackedScene" uid="uid://ct8m3lnd83bcm" path="res://GameObjects/Player/player.tscn" id="2_m2v75"]
 [ext_resource type="PackedScene" uid="uid://416a3htd83up" path="res://GameObjects/Track Pieces/bridgeStraight.tscn" id="3_ey0au"]
 [ext_resource type="PackedScene" uid="uid://vx3mr66olv7a" path="res://GameObjects/Track Pieces/straight.tscn" id="4_6etlb"]
 [ext_resource type="PackedScene" uid="uid://c6nmtvp1repet" path="res://GameObjects/Track Pieces/Corner 2 - TR/corner2.tscn" id="5_8o50b"]
-[ext_resource type="PackedScene" uid="uid://c2b20y8ngnk2s" path="res://GameObjects/Enemy/enemy.tscn" id="6_s84bn"]
+[ext_resource type="PackedScene" uid="uid://c2b20y8ngnk2s" path="res://GameObjects/Enemy/Enemy.tscn" id="6_s84bn"]
 [ext_resource type="PackedScene" uid="uid://b1oxtqqg8qe64" path="res://GameObjects/Track Pieces/Corner 4 - BL/corner4.tscn" id="7_ungbw"]
 [ext_resource type="PackedScene" uid="uid://c8hys8oquiv0s" path="res://GameObjects/Track Pieces/Corner 3 - BR/corner3.tscn" id="8_csfg5"]
 [ext_resource type="PackedScene" uid="uid://bo0mqeiacl1ur" path="res://GameObjects/Track Pieces/Coner 1 - TL/corner1.tscn" id="9_c7c03"]
-[ext_resource type="PackedScene" uid="uid://ckuuogjur5y5n" path="res://inDev/playerinDev.tscn" id="12_nhau1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h7icd"]
 texture = ExtResource("1_weqk7")
@@ -697,19 +696,12 @@ position = Vector2(1244, 742)
 
 [node name="Enemies" type="Node2D" parent="."]
 
+[node name="Player" parent="." node_paths=PackedStringArray("CLONES_NODE") instance=ExtResource("2_m2v75")]
+position = Vector2(195, 388)
+CLONES_NODE = NodePath("../Clones")
+
 [node name="Clones" type="Node2D" parent="."]
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-[node name="LevelHUD" parent="." instance=ExtResource("3_0fkuq")]
-z_index = 2
-position = Vector2(-1, 5)
-
-[node name="Player" parent="." node_paths=PackedStringArray("CLONES_NODE") instance=ExtResource("12_nhau1")]
-CLONES_NODE = NodePath("../Clones")
-=======
->>>>>>> Stashed changes
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -724,10 +716,6 @@ offset_top = 990.0
 offset_right = 1834.0
 offset_bottom = 1030.0
 text = "Start Level"
-<<<<<<< Updated upstream
-=======
->>>>>>> a1e3d3b2341c9b4f8f5a077c553fd93cc669faf8
->>>>>>> Stashed changes
 
 [connection signal="timeout" from="EnemySpawnPoint/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="pressed" from="Control/PlayButton" to="." method="_on_play_button_pressed"]
