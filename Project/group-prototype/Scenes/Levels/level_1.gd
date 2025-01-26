@@ -28,13 +28,20 @@ func create_enemy(level: int):
 func spawn_enemy():
 	if enemy_array.is_empty():
 		SPAWN_TIMER.stop()
+		start_level()
 		return
 	
 	ENEMY_NODE.add_child(enemy_array[0])
 	enemy_array.remove_at(0)
 
 func start_level():
-	round_three()
+	match next_round:
+		1:
+			round_one()
+		2:
+			round_two()
+		3:
+			round_three()
 
 # LEVEL ROUNDS
 
@@ -50,6 +57,7 @@ func round_one():
 # ROUND 2: 10 REDS, 10 BLUES
 func round_two():
 	current_round = 2
+	next_round = 3
 	for i in 10:
 		enemy_array.append(create_enemy(1))
 		enemy_array.append(create_enemy(2))
