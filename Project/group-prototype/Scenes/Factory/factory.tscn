@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://1ix164dh87b5"]
+[gd_scene load_steps=16 format=4 uid="uid://1ix164dh87b5"]
 
 [ext_resource type="Script" path="res://Scenes/Factory/factory.gd" id="1_7s8mq"]
 [ext_resource type="TileSet" uid="uid://d0wmr04r1en8v" path="res://Assets/Factory/factory_tileset.tres" id="2_l4wup"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dhyx2wnmgk0ck" path="res://GameObjects/Factory/Stone/stone_harvester.tscn" id="7_xnl5s"]
 [ext_resource type="Texture2D" uid="uid://cnav1dtflxflu" path="res://Assets/Factory/Currency/coin_sprite.png" id="8_46bd5"]
 [ext_resource type="Texture2D" uid="uid://bsfd3l11f870w" path="res://Assets/Factory/Stone/stone_sprite.png" id="8_t8su5"]
+[ext_resource type="AudioStream" uid="uid://gm7ssm5yrm85" path="res://Assets/Music/bloons ah track factory.wav" id="11_046fd"]
 
 [sub_resource type="Animation" id="Animation_yoe7g"]
 length = 0.001
@@ -250,5 +251,11 @@ layout_mode = 2
 [node name="PlayButton" type="Button" parent="UI"]
 offset_right = 8.0
 offset_bottom = 8.0
+
+[node name="Background_Music" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Background_Music"]
+stream = ExtResource("11_046fd")
+autoplay = true
 
 [connection signal="pressed" from="UI/PlayButton" to="." method="_on_play_button_pressed"]

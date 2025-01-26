@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://iv3b63bif04u"]
+[gd_scene load_steps=14 format=4 uid="uid://iv3b63bif04u"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_1.gd" id="1_htovo"]
 [ext_resource type="Texture2D" uid="uid://dfg8n1uqc24i6" path="res://Assets/Map/spritesheet_tiles.png" id="1_weqk7"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b1oxtqqg8qe64" path="res://GameObjects/Track Pieces/Corner 4 - BL/corner4.tscn" id="7_ungbw"]
 [ext_resource type="PackedScene" uid="uid://c8hys8oquiv0s" path="res://GameObjects/Track Pieces/Corner 3 - BR/corner3.tscn" id="8_csfg5"]
 [ext_resource type="PackedScene" uid="uid://bo0mqeiacl1ur" path="res://GameObjects/Track Pieces/Coner 1 - TL/corner1.tscn" id="9_c7c03"]
+[ext_resource type="AudioStream" uid="uid://u37k78uuqabb" path="res://Assets/Music/bloons ah track.wav" id="11_hqsgy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h7icd"]
 texture = ExtResource("1_weqk7")
@@ -734,6 +735,12 @@ offset_bottom = 457.0
 scale = Vector2(0.26, 0.26)
 theme_override_font_sizes/font_size = 300
 text = "Factory"
+
+[node name="Background_Music" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Background_Music"]
+stream = ExtResource("11_hqsgy")
+autoplay = true
 
 [connection signal="timeout" from="EnemySpawnPoint/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="pressed" from="Control/PlayButton" to="." method="_on_play_button_pressed"]
