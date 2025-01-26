@@ -13,6 +13,7 @@ script = ExtResource("1_ma1s3")
 CLONE_RESOURCE = ExtResource("2_wnyjk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 1)
 texture = ExtResource("3_aek2t")
 region_enabled = true
 region_rect = Rect2(426, 176, 32, 43)

@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgbhfm4acvuyn"]
+
+[ext_resource type="Script" path="res://GameObjects/Clone/clone.gd" id="1_elf6n"]
+[ext_resource type="PackedScene" uid="uid://dw0s34q4chupy" path="res://GameObjects/Bullet/bullet.tscn" id="2_8jrru"]
+[ext_resource type="Texture2D" uid="uid://rikv27f4dvrs" path="res://Assets/Characters/spritesheet_characters.png" id="3_6l3vg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x71wi"]
+radius = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6k0ne"]
+radius = 60.0
+
+[node name="Clone" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+script = ExtResource("1_elf6n")
+BULLET_RESOURCE = ExtResource("2_8jrru")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_6l3vg")
+region_enabled = true
+region_rect = Rect2(164.891, 175.584, 47.1901, 44.7064)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x71wi")
+
+[node name="CloneRadius" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloneRadius"]
+shape = SubResource("CircleShape2D_6k0ne")
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Bullets" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="CloneRadius" to="." method="_on_clone_radius_body_entered"]
+[connection signal="body_exited" from="CloneRadius" to="." method="_on_clone_radius_body_exited"]

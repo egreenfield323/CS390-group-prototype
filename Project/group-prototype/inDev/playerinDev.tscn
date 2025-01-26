@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckuuogjur5y5n"]
+
+[ext_resource type="Script" path="res://inDev/playerin_dev.gd" id="1_cp8fb"]
+[ext_resource type="PackedScene" uid="uid://jwrxl4vquthy" path="res://inDev/demoClones/clone1.tscn" id="2_0nhsm"]
+[ext_resource type="Texture2D" uid="uid://rikv27f4dvrs" path="res://Assets/Characters/spritesheet_characters.png" id="3_5ejme"]
+[ext_resource type="PackedScene" uid="uid://b13gyny5n1n8f" path="res://inDev/demoClones/clone2.tscn" id="3_wdf7l"]
+[ext_resource type="PackedScene" uid="uid://bgbhfm4acvuyn" path="res://inDev/demoClones/clone3.tscn" id="4_6k3rn"]
+[ext_resource type="PackedScene" uid="uid://f1x7tqehumve" path="res://inDev/demoClones/clone4.tscn" id="5_20jlu"]
+[ext_resource type="PackedScene" uid="uid://ch0jd0ck1usrs" path="res://inDev/demoClones/clone5.tscn" id="6_4l45p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x71wi"]
+radius = 25.0
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_cp8fb")
+CLONE_RESOURCE1 = ExtResource("2_0nhsm")
+CLONE_RESOURCE2 = ExtResource("3_wdf7l")
+CLONE_RESOURCE3 = ExtResource("4_6k3rn")
+CLONE_RESOURCE4 = ExtResource("5_20jlu")
+CLONE_RESOURCE5 = ExtResource("6_4l45p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_5ejme")
+region_enabled = true
+region_rect = Rect2(426, 176, 32, 43)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_5ejme")
+region_enabled = true
+region_rect = Rect2(459.548, 89.1197, 30.323, 43.8517)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_5ejme")
+region_enabled = true
+region_rect = Rect2(462.418, -0.924648, 28.0035, 45.0789)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_5ejme")
+region_enabled = true
+region_rect = Rect2(427.691, 130.961, 28.2238, 44.6371)
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_5ejme")
+region_enabled = true
+region_rect = Rect2(353.032, 131.119, 32.6259, 45.158)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_x71wi")
+
+[node name="CloneTimer" type="Timer" parent="."]
+one_shot = true

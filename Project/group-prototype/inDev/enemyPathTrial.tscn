@@ -1,80 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://btxkcolngywjh"]
+[gd_scene load_steps=3 format=3 uid="uid://btxkcolngywjh"]
 
-[ext_resource type="PackedScene" uid="uid://c2b20y8ngnk2s" path="res://GameObjects/Enemy/Enemy.tscn" id="1_l8jet"]
-[ext_resource type="PackedScene" uid="uid://bo0mqeiacl1ur" path="res://GameObjects/Track Pieces/Coner 1 - TL/corner1.tscn" id="2_a1ipn"]
-[ext_resource type="PackedScene" uid="uid://c6nmtvp1repet" path="res://GameObjects/Track Pieces/Corner 2 - TR/corner2.tscn" id="3_khwjg"]
-[ext_resource type="PackedScene" uid="uid://c8hys8oquiv0s" path="res://GameObjects/Track Pieces/Corner 3 - BR/corner3.tscn" id="4_7auwl"]
-[ext_resource type="PackedScene" uid="uid://b1oxtqqg8qe64" path="res://GameObjects/Track Pieces/Corner 4 - BL/corner4.tscn" id="5_fml7a"]
-[ext_resource type="PackedScene" uid="uid://vx3mr66olv7a" path="res://GameObjects/Track Pieces/straight.tscn" id="5_ojqbl"]
-[ext_resource type="PackedScene" uid="uid://416a3htd83up" path="res://GameObjects/Track Pieces/bridgeStraight.tscn" id="7_dsvup"]
-[ext_resource type="PackedScene" uid="uid://ct8m3lnd83bcm" path="res://GameObjects/Player/player.tscn" id="8_1a68v"]
+[ext_resource type="PackedScene" uid="uid://ckuuogjur5y5n" path="res://inDev/playerinDev.tscn" id="2_bm0gc"]
+[ext_resource type="PackedScene" uid="uid://d4lsgx05sb6qv" path="res://inDev/TowerHud/level_hud.tscn" id="9_obset"]
 
-[node name="EnemyPathTrial" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 
-[node name="Enemy" parent="." instance=ExtResource("1_l8jet")]
-position = Vector2(240, 1160)
+[node name="LevelHUD" parent="." instance=ExtResource("9_obset")]
 
-[node name="Corner1" parent="." instance=ExtResource("2_a1ipn")]
-position = Vector2(235, 538)
+[node name="Player" parent="." node_paths=PackedStringArray("CLONES_NODE") instance=ExtResource("2_bm0gc")]
+position = Vector2(0, -2)
+CLONES_NODE = NodePath("../Node2D")
 
-[node name="Corner2" parent="." instance=ExtResource("3_khwjg")]
-position = Vector2(447, 533)
-
-[node name="Corner6" parent="." instance=ExtResource("3_khwjg")]
-position = Vector2(1112, 241)
-
-[node name="Corner4" parent="." instance=ExtResource("5_fml7a")]
-position = Vector2(456, 895)
-
-[node name="Corner5" parent="." instance=ExtResource("5_fml7a")]
-position = Vector2(902, 238)
-
-[node name="Straight" parent="." instance=ExtResource("5_ojqbl")]
-position = Vector2(266, 1005)
-rotation = 1.5708
-
-[node name="Straight11" parent="." instance=ExtResource("5_ojqbl")]
-position = Vector2(929, 58)
-rotation = 1.5708
-
-[node name="Straight2" parent="." instance=ExtResource("5_ojqbl")]
-position = Vector2(266, 855)
-rotation = 1.5708
-
-[node name="Straight3" parent="." instance=ExtResource("5_ojqbl")]
-position = Vector2(266, 707)
-rotation = 1.5708
-
-[node name="Straight4" parent="." instance=ExtResource("5_ojqbl")]
-position = Vector2(480, 711)
-rotation = 1.5708
-
-[node name="Straight8" parent="." instance=ExtResource("5_ojqbl")]
-position = Vector2(1147, 715)
-rotation = 1.5708
-
-[node name="Straight10" parent="." instance=ExtResource("5_ojqbl")]
-position = Vector2(1147, 421)
-rotation = 1.5708
-
-[node name="Straight5" parent="." instance=ExtResource("5_ojqbl")]
-position = Vector2(637, 865)
-
-[node name="Straight6" parent="." instance=ExtResource("5_ojqbl")]
-position = Vector2(787, 865)
-
-[node name="Straight7" parent="." instance=ExtResource("5_ojqbl")]
-position = Vector2(937, 865)
-
-[node name="Corner3" parent="." instance=ExtResource("4_7auwl")]
-position = Vector2(1120, 893)
-
-[node name="BridgeStraight" parent="." instance=ExtResource("7_dsvup")]
-position = Vector2(1147, 566)
-rotation = 1.5708
-
-[node name="Player" parent="." instance=ExtResource("8_1a68v")]
-z_index = 3
-position = Vector2(1351, 562)
-collision_layer = 4
-collision_mask = 4
+[node name="Node2D" type="Node2D" parent="."]

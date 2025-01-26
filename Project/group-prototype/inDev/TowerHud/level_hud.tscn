@@ -1,0 +1,174 @@
+[gd_scene load_steps=9 format=3 uid="uid://d4lsgx05sb6qv"]
+
+[ext_resource type="Texture2D" uid="uid://rikv27f4dvrs" path="res://Assets/Characters/spritesheet_characters.png" id="1_bkry1"]
+[ext_resource type="Script" path="res://inDev/TowerHud/level_hud.gd" id="1_ujj25"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ej7mv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3j2ok"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c07k6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t6ym3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k3op4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xn4cd"]
+font_size = 24
+font_color = Color(0.732112, 0.730544, 0, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="LevelHUD" type="Node2D"]
+script = ExtResource("1_ujj25")
+
+[node name="clonebox" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="clonebox"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 910.0
+offset_right = 75.0
+offset_bottom = 1067.0
+scale = Vector2(33.5256, 1)
+
+[node name="clone1button" type="Button" parent="clonebox/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ej7mv")
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="clonebox/HBoxContainer/clone1button"]
+position = Vector2(3.96712, 58)
+scale = Vector2(0.084, 2)
+texture = ExtResource("1_bkry1")
+region_enabled = true
+region_rect = Rect2(214.619, 43.4012, 49.1884, 44.6976)
+
+[node name="clone2button" type="Button" parent="clonebox/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3j2ok")
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="clonebox/HBoxContainer/clone2button"]
+position = Vector2(4.2264, 58)
+scale = Vector2(0.08, 2)
+texture = ExtResource("1_bkry1")
+region_enabled = true
+region_rect = Rect2(166, 2, 52, 43)
+
+[node name="clone3button" type="Button" parent="clonebox/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c07k6")
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="clonebox/HBoxContainer/clone3button"]
+position = Vector2(4.21723, 55)
+scale = Vector2(0.08, 2)
+texture = ExtResource("1_bkry1")
+region_enabled = true
+region_rect = Rect2(61, 87, 50.9435, 46)
+
+[node name="clone4button" type="Button" parent="clonebox/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t6ym3")
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="clonebox/HBoxContainer/clone4button"]
+position = Vector2(4.20806, 52)
+scale = Vector2(0.08, 2)
+texture = ExtResource("1_bkry1")
+region_enabled = true
+region_rect = Rect2(56, -2, 57, 47)
+
+[node name="clone5button" type="Button" parent="clonebox/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k3op4")
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="clonebox/HBoxContainer/clone5button"]
+position = Vector2(4.22871, 50)
+scale = Vector2(0.08, 2)
+texture = ExtResource("1_bkry1")
+region_enabled = true
+region_rect = Rect2(0.301003, 0.601746, 57.4851, 42.8436)
+
+[node name="clone5Bar" type="ProgressBar" parent="clonebox"]
+layout_mode = 0
+offset_left = 1680.0
+offset_top = 1024.0
+offset_right = 1818.0
+offset_bottom = 1045.0
+show_percentage = false
+
+[node name="clone4Bar" type="ProgressBar" parent="clonebox"]
+layout_mode = 0
+offset_left = 1288.0
+offset_top = 1024.0
+offset_right = 1426.0
+offset_bottom = 1045.0
+show_percentage = false
+
+[node name="clone3Bar" type="ProgressBar" parent="clonebox"]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 1024.0
+offset_right = 1026.0
+offset_bottom = 1045.0
+show_percentage = false
+
+[node name="clone2Bar" type="ProgressBar" parent="clonebox"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 1024.0
+offset_right = 618.0
+offset_bottom = 1045.0
+show_percentage = false
+
+[node name="clone1Bar" type="ProgressBar" parent="clonebox"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 1024.0
+offset_right = 234.0
+offset_bottom = 1045.0
+show_percentage = false
+
+[node name="clonebox1" type="ColorRect" parent="clonebox"]
+z_index = -1
+layout_mode = 0
+offset_top = 900.0
+offset_right = 1920.0
+offset_bottom = 940.0
+scale = Vector2(1, 4.6)
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+color = Color(0.278893, 0.115707, 0.0277848, 1)
+
+[node name="clonebox2" type="ColorRect" parent="clonebox"]
+z_index = -1
+layout_mode = 0
+offset_left = 10.0
+offset_top = 910.0
+offset_right = 1910.0
+offset_bottom = 945.0
+scale = Vector2(1, 4.6)
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+color = Color(0.517292, 0.401247, 0.133124, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 842.0
+offset_top = 893.0
+offset_right = 1014.0
+offset_bottom = 927.0
+text = "Click to switch!"
+label_settings = SubResource("LabelSettings_xn4cd")
+
+[connection signal="pressed" from="clonebox/HBoxContainer/clone1button" to="." method="_on_clone_1_button_pressed"]
+[connection signal="pressed" from="clonebox/HBoxContainer/clone2button" to="." method="_on_clone_2_button_pressed"]
+[connection signal="pressed" from="clonebox/HBoxContainer/clone3button" to="." method="_on_clone_3_button_pressed"]
+[connection signal="pressed" from="clonebox/HBoxContainer/clone4button" to="." method="_on_clone_4_button_pressed"]
+[connection signal="pressed" from="clonebox/HBoxContainer/clone5button" to="." method="_on_clone_5_button_pressed"]

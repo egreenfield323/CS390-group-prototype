@@ -1,13 +1,29 @@
 extends CharacterBody2D
 
-@export var CLONE_RESOURCE: Resource
+@onready var sprite1 = $Sprite2D
+@onready var sprite2 = $Sprite2D2
+@onready var sprite3 = $Sprite2D3
+@onready var sprite4 = $Sprite2D4
+@onready var sprite5 = $Sprite2D5
+
+
+@export var CLONE_RESOURCE1: Resource
+@export var CLONE_RESOURCE2: Resource
+@export var CLONE_RESOURCE3: Resource
+@export var CLONE_RESOURCE4: Resource
+@export var CLONE_RESOURCE5: Resource
+@onready var cloneList = [CLONE_RESOURCE1, CLONE_RESOURCE2,CLONE_RESOURCE3,CLONE_RESOURCE4,CLONE_RESOURCE5]
 
 
 @export var SPEED = 300.0
 @onready var clone_timer = $CloneTimer
 @export var CLONES_NODE: Node
 
+@onready var curSprite = 0
+@onready var spriteList = [sprite1,sprite2,sprite3,sprite4,sprite5]
+
 func _physics_process(delta: float) -> void:
+	check_Char()
 	var direction: Vector2
 	
 	if Input.is_action_pressed("move_left"):
@@ -25,6 +41,17 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = direction.normalized() * SPEED
 	move_and_slide()
+	
+#sprite switch depending on global var
+func check_Char():
+	if PlayerInfo.playerVer == curSprite:
+		return
+	for sprite in spriteList:
+		sprite.hide()
+	spriteList[PlayerInfo.playerVer -1].show()
+		
+	curSprite = PlayerInfo.playerVer
+	
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("clone"):
@@ -39,7 +66,7 @@ func make_clone():
 		print("ERROR: No node specified for variable CLONES_NODE!!!")
 		CLONES_NODE = self
 	
-	var clone = CLONE_RESOURCE.instantiate()
+	var clone = cloneList[PlayerInfo.playerVer-1].instantiate()
 	clone.position = self.global_position
 	CLONES_NODE.add_child(clone)
 	
