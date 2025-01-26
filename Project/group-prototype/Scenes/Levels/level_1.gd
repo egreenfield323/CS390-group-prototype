@@ -42,6 +42,13 @@ func start_level():
 			round_two()
 		3:
 			round_three()
+		4:
+			round_four()
+		5:
+			round_five()
+
+func update_currency():
+	$Control/CurrencyLabel.text = "Currency: " + str(GameController.currency)
 
 # LEVEL ROUNDS
 
@@ -67,10 +74,36 @@ func round_two():
 # ROUND 3: 15 REDS, 15 BLUES, 5 GREENS
 func round_three():
 	current_round = 3
+	next_round = 4
 	for i in 5:
 		enemy_array.append(create_enemy(3))
 		for j in 3:
 			enemy_array.append(create_enemy(1))
 			enemy_array.append(create_enemy(2))
+	
+	SPAWN_TIMER.start()
+
+# ROUND 4: 15 BLUES, 5 GREENS, 2 PURPLES
+func round_four():
+	current_round = 4
+	next_round = 5
+	enemy_array.append(create_enemy(4))
+	for i in 5:
+		enemy_array.append(create_enemy(3))
+		for j in 3:
+			enemy_array.append(create_enemy(2))
+	enemy_array.append(create_enemy(4))
+	
+	SPAWN_TIMER.start()
+
+# ROUND 5: 10 GREENS, 5 PURPLES, 2 ORANGES
+func round_five():
+	current_round = 5
+	enemy_array.append(create_enemy(5))
+	for i in 5:
+		enemy_array.append(create_enemy(4))
+		for j in 2:
+			enemy_array.append(create_enemy(3))
+	enemy_array.append(create_enemy(5))
 	
 	SPAWN_TIMER.start()

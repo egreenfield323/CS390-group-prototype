@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://416a3htd83up" path="res://GameObjects/Track Pieces/bridgeStraight.tscn" id="3_ey0au"]
 [ext_resource type="PackedScene" uid="uid://vx3mr66olv7a" path="res://GameObjects/Track Pieces/straight.tscn" id="4_6etlb"]
 [ext_resource type="PackedScene" uid="uid://c6nmtvp1repet" path="res://GameObjects/Track Pieces/Corner 2 - TR/corner2.tscn" id="5_8o50b"]
-[ext_resource type="PackedScene" uid="uid://c2b20y8ngnk2s" path="res://GameObjects/Enemy/Enemy.tscn" id="6_s84bn"]
+[ext_resource type="PackedScene" uid="uid://derq32w43kbes" path="res://GameObjects/Enemy/enemy.tscn" id="6_s84bn"]
 [ext_resource type="PackedScene" uid="uid://b1oxtqqg8qe64" path="res://GameObjects/Track Pieces/Corner 4 - BL/corner4.tscn" id="7_ungbw"]
 [ext_resource type="PackedScene" uid="uid://c8hys8oquiv0s" path="res://GameObjects/Track Pieces/Corner 3 - BR/corner3.tscn" id="8_csfg5"]
 [ext_resource type="PackedScene" uid="uid://bo0mqeiacl1ur" path="res://GameObjects/Track Pieces/Coner 1 - TL/corner1.tscn" id="9_c7c03"]
@@ -716,6 +716,14 @@ offset_top = 990.0
 offset_right = 1834.0
 offset_bottom = 1030.0
 text = "Start Level"
+
+[node name="CurrencyLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 300
+text = "Currency: "
 
 [connection signal="timeout" from="EnemySpawnPoint/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="pressed" from="Control/PlayButton" to="." method="_on_play_button_pressed"]
