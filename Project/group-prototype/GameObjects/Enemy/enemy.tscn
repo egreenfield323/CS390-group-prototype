@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2b20y8ngnk2s"]
+[gd_scene load_steps=7 format=3 uid="uid://derq32w43kbes"]
 
-[ext_resource type="Script" path="res://GameObjects/Enemy/enemy.gd" id="1_mdr5b"]
+[ext_resource type="Script" path="res://GameObjects/Enemy/enemy.gd" id="1_vd44v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gk3cn"]
 radius = 44.0454
@@ -49,7 +49,7 @@ size = Vector2(72, 72)
 [node name="Enemy" type="CharacterBody2D" groups=["Enemies", "enemy"]]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("1_mdr5b")
+script = ExtResource("1_vd44v")
 speed = 200
 
 [node name="ColorRect" type="ColorRect" parent="."]

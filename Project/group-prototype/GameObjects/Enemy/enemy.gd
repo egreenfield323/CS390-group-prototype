@@ -6,6 +6,8 @@ extends CharacterBody2D
 @export var worth : int = 5
 @export var direction = Vector2.UP
 
+var GLOBAL = GameController
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	match level:
@@ -63,4 +65,9 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 
 func check_health():
 	if health == 0:
-		self.queue_free()
+		die()
+
+func die():
+	self.queue_free()
+	GLOBAL.currency += worth
+	get_parent().get_parent().update_currency()
