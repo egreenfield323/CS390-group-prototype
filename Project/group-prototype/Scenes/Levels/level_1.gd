@@ -10,6 +10,9 @@ var round_complete : bool = false
 var current_round : int = 0
 var next_round : int = 1
 
+func _ready() -> void:
+	update_currency()
+
 # start level
 func _on_play_button_pressed() -> void:
 	$Control/PlayButton.disabled = true
@@ -107,3 +110,7 @@ func round_five():
 	enemy_array.append(create_enemy(5))
 	
 	SPAWN_TIMER.start()
+
+
+func _on_factory_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Factory/factory.tscn")

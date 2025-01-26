@@ -725,5 +725,16 @@ scale = Vector2(0.2, 0.2)
 theme_override_font_sizes/font_size = 300
 text = "Currency: "
 
+[node name="FactoryButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1584.0
+offset_top = 40.0
+offset_right = 2666.0
+offset_bottom = 457.0
+scale = Vector2(0.26, 0.26)
+theme_override_font_sizes/font_size = 300
+text = "Factory"
+
 [connection signal="timeout" from="EnemySpawnPoint/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="pressed" from="Control/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/FactoryButton" to="." method="_on_factory_button_pressed"]

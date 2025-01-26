@@ -44,3 +44,8 @@ func add_currency(amount = null):
 		currency += 1
 	
 	update_ui()
+
+
+func _on_play_button_pressed() -> void:
+	GameController.currency = currency
+	get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")
