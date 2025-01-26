@@ -31,7 +31,7 @@ func _on_timer_timeout() -> void:
 
 func _on_level_upgrade_pressed() -> void:
 	if $"../../..".currency >= cost_to_upgrade and level < 10:
-		$"../../..".currency -= cost_to_upgrade
+		$"../../..".sub_currency(cost_to_upgrade)
 		level += 1
 		offload_rate *= 0.7
 		offload_rate = round(offload_rate*pow(10,2))/pow(10,2)

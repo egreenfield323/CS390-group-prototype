@@ -84,7 +84,7 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 # Level upgrade function
 func _on_level_upgrade_pressed() -> void:
 	if $"../../..".currency >= cost_to_upgrade and level < 5:
-		$"../../..".currency -= cost_to_upgrade
+		$"../../..".sub_currency(cost_to_upgrade)
 		level += 1
 		max_inventory_space = roundi(max_inventory_space * 1.5)
 		cost_to_upgrade = roundi(cost_to_upgrade * 1.4)

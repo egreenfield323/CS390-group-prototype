@@ -8,6 +8,8 @@ var inventory = {
 var currency = 0
 
 func _ready() -> void:
+	currency = GameController.currency
+	inventory = GameController.inventory
 	update_ui()
 
 func _process(delta: float) -> void:
@@ -45,7 +47,15 @@ func add_currency(amount = null):
 	
 	update_ui()
 
+func sub_currency(amount = null):
+	if amount:
+		currency -= amount
+	else:
+		currency += 1
+	
+	update_ui()
 
 func _on_play_button_pressed() -> void:
 	GameController.currency = currency
+	GameController.inventory = inventory
 	get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")

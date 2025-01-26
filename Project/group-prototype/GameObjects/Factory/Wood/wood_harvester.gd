@@ -30,7 +30,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 func _on_level_upgrade_pressed() -> void:
 	if $"../../..".currency >= cost_to_upgrade and level < 10:
-		$"../../..".currency -= cost_to_upgrade
+		$"../../..".sub_currency(cost_to_upgrade)
 		level += 1
 		generation_freq *= 0.8
 		generation_freq = round(generation_freq*pow(10,2))/pow(10,2)
