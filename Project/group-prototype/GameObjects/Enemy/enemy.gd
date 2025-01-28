@@ -64,7 +64,7 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		health -= body.dmg_amount
 
 func check_health():
-	if health <= 0:
+	if health == 0:
 		die()
 
 func die():
