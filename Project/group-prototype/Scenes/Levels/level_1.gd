@@ -125,6 +125,10 @@ func round_five():
 	
 	SPAWN_TIMER.start()
 
+func update_global_resources():
+	GameController.inventory["WOOD"] = wood
+	GameController.inventory["STONE"] = stone
 
 func _on_factory_button_pressed() -> void:
+	update_global_resources()
 	get_tree().change_scene_to_file("res://Scenes/Factory/factory.tscn")
