@@ -724,7 +724,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 scale = Vector2(0.2, 0.2)
 theme_override_font_sizes/font_size = 300
-text = "Currency: "
+text = "Currency: 0"
 
 [node name="FactoryButton" type="Button" parent="Control"]
 layout_mode = 0
@@ -735,6 +735,24 @@ offset_bottom = 457.0
 scale = Vector2(0.26, 0.26)
 theme_override_font_sizes/font_size = 300
 text = "Factory"
+
+[node name="WoodLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 364.0
+offset_right = 1533.0
+offset_bottom = 409.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 300
+text = "Wood: 0"
+
+[node name="StoneLabel" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 651.0
+offset_right = 1812.0
+offset_bottom = 409.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 300
+text = "Stone: 0"
 
 [node name="Background_Music" type="Node2D" parent="."]
 

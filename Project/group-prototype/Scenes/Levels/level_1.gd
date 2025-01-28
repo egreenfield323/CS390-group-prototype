@@ -10,8 +10,12 @@ var round_complete : bool = false
 var current_round : int = 0
 var next_round : int = 1
 
+var wood : int
+var stone : int
+
 func _ready() -> void:
-	update_currency()
+	import_resources()
+	update_resource_labels()
 
 # start level
 func _on_play_button_pressed() -> void:
@@ -50,8 +54,18 @@ func start_level():
 		5:
 			round_five()
 
-func update_currency():
+func update_currency_label():
 	$Control/CurrencyLabel.text = "Currency: " + str(GameController.currency)
+
+func import_resources():
+	wood = GameController.inventory["WOOD"]
+	stone = GameController.inventory["STONE"]
+
+func update_resource_labels():
+	$Control/WoodLabel.text = "Wood: " + str(wood)
+	$Control/StoneLabel.text = "Stone: " + str(stone)
+
+
 
 # LEVEL ROUNDS
 

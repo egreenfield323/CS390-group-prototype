@@ -70,4 +70,4 @@ func check_health():
 func die():
 	self.queue_free()
 	GLOBAL.currency += worth
-	get_parent().get_parent().update_currency()
+	get_parent().get_parent().update_currency_label()
