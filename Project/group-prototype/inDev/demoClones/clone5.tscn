@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch0jd0ck1usrs"]
+[gd_scene load_steps=5 format=3 uid="uid://ch0jd0ck1usrs"]
 
-[ext_resource type="Script" path="res://GameObjects/Clone/clone.gd" id="1_hbslx"]
-[ext_resource type="PackedScene" uid="uid://dw0s34q4chupy" path="res://GameObjects/Bullet/bullet.tscn" id="2_20iv2"]
+[ext_resource type="Script" path="res://inDev/demoClones/clone_5.gd" id="1_xo7fb"]
 [ext_resource type="Texture2D" uid="uid://rikv27f4dvrs" path="res://Assets/Characters/spritesheet_characters.png" id="3_lcpau"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x71wi"]
@@ -14,8 +13,7 @@ radius = 60.0
 collision_layer = 2
 collision_mask = 2
 gravity_scale = 0.0
-script = ExtResource("1_hbslx")
-BULLET_RESOURCE = ExtResource("2_20iv2")
+script = ExtResource("1_xo7fb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_lcpau")
