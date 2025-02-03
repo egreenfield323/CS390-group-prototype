@@ -2,10 +2,12 @@ extends CharacterBody2D
 
 @export var CLONE_RESOURCE: Resource
 
-
-@export var SPEED = 300.0
+@onready var LEVEL_CONTROLLER = get_parent()
 @onready var clone_timer = $CloneTimer
+
+@export var SPEED : float = 300.0
 @export var CLONES_NODE: Node
+@export var CLONE_COST : int = 10
 
 func _physics_process(delta: float) -> void:
 	var direction: Vector2
@@ -35,6 +37,9 @@ func make_clone():
 	if clone_timer.time_left > 0:
 		return
 	
+	if LEVEL_CONTROLLER.wood < CLONE_COST:
+		return
+	
 	if CLONES_NODE == null:
 		print("ERROR: No node specified for variable CLONES_NODE!!!")
 		CLONES_NODE = self
@@ -42,6 +47,8 @@ func make_clone():
 	var clone = CLONE_RESOURCE.instantiate()
 	clone.position = self.global_position
 	CLONES_NODE.add_child(clone)
+	LEVEL_CONTROLLER.wood -= CLONE_COST
+	LEVEL_CONTROLLER.update_resource_labels()
 	
 	clone_timer.start()
 
