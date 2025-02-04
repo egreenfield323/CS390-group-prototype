@@ -28,16 +28,16 @@ func add_to_inventory(item):
 		update_ui()
 
 func update_ui():
-	$UI/VBoxContainer/Currency_Panel/Label.text = str(currency)
+	$Camera2D/UI/VBoxContainer/Currency_Panel/Label.text = str(currency)
 	
 	for material_name in inventory.keys():
 		var quantity = inventory[material_name]
 		
 		match material_name:
 			"WOOD":
-				$UI/VBoxContainer/Wood_Panel/Label.text = str(quantity)
+				$Camera2D/UI/VBoxContainer/Wood_Panel/Label.text = str(quantity)
 			"STONE":
-				$UI/VBoxContainer/Stone_Panel/Label.text = str(quantity)
+				$Camera2D/UI/VBoxContainer/Stone_Panel/Label.text = str(quantity)
 
 func add_currency(amount = null):
 	if amount:
