@@ -10,6 +10,21 @@ var currency = 0
 func _ready() -> void:
 	currency = GameController.currency
 	inventory = GameController.inventory
+	
+	
+	if GameController.has_wood:
+		$Wood_Layer.visible = true
+		$Wood_Layer.process_mode = Node.PROCESS_MODE_INHERIT
+	else:
+		$Wood_Layer.visible = false
+		$Wood_Layer.process_mode = Node.PROCESS_MODE_DISABLED
+	if GameController.has_stone:
+		$Stone_Layer.visible = true
+		$Stone_Layer.process_mode = Node.PROCESS_MODE_INHERIT
+	else:
+		$Stone_Layer.visible = false
+		$Stone_Layer.process_mode = Node.PROCESS_MODE_DISABLED
+	
 	update_ui()
 
 func _process(delta: float) -> void:

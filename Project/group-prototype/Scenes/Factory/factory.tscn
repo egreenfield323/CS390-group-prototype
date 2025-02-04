@@ -263,9 +263,11 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="PlayButton" type="Button" parent="Camera2D/UI"]
-offset_left = 8.0
-offset_top = 19.0
-offset_right = 16.0
-offset_bottom = 27.0
+offset_left = 878.0
+offset_top = 970.0
+offset_right = 1105.0
+offset_bottom = 1088.0
+theme_override_font_sizes/font_size = 80
+text = "Start"
 
 [connection signal="pressed" from="Camera2D/UI/PlayButton" to="." method="_on_play_button_pressed"]

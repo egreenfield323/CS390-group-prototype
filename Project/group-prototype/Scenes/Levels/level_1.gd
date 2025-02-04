@@ -116,6 +116,7 @@ func round_four():
 # ROUND 5: 10 GREENS, 5 PURPLES, 2 ORANGES
 func round_five():
 	current_round = 5
+	next_round = 6
 	enemy_array.append(create_enemy(5))
 	for i in 5:
 		enemy_array.append(create_enemy(4))
@@ -130,5 +131,7 @@ func update_global_resources():
 	GameController.inventory["STONE"] = stone
 
 func _on_factory_button_pressed() -> void:
+	if next_round == 6 and enemy_array.is_empty():
+		GameController.has_stone = true
 	update_global_resources()
 	get_tree().change_scene_to_file("res://Scenes/Factory/factory.tscn")
